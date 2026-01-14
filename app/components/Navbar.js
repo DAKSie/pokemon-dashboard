@@ -17,7 +17,7 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass shadow-lg shadow-indigo-500/10 rounded-b-2xl"
+          ? "glass shadow-lg shadow-indigo-500/"
           : "bg-gradient-to-b from-slate-900/60 to-transparent"
       }`}
     >

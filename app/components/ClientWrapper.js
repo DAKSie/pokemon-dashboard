@@ -23,7 +23,7 @@ export default function ClientWrapper({ data }) {
       {/* Hero section with title and description */}
       <div ref={titleRef} className="relative overflow-hidden rounded-3xl glass shadow-3d p-8 md:p-12">
         {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 via-purple-600/10 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 via-purple-600/10 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" weird-ahh-class/>
 
         <div className={`relative z-10 transition-all duration-700 transform ${
           titleVisible
