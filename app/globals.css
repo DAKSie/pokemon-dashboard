@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f0f1a;
+  --foreground: #e8e8f0;
+  --surface-dark: #1a1a2e;
+  --surface-light: #252542;
+  --accent-primary: #6366f1;
+  --accent-secondary: #8b5cf6;
+  --accent-tertiary: #06b6d4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, var(--background) 0%, #1a1a3a 100%);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated gradient background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(99, 102, 241, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 80%,
+    rgba(139, 92, 246, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: drift 20s infinite ease-in-out;
+}
+
+@keyframes drift {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(232, 232, 240, 0.1);
+  border-radius: 12px;
+}
+
+/* 3D Card effect */
+.card-3d {
+  perspective: 1000px;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(-5deg) scale(1.02);
+}
+
+/* Shadow layers for depth */
+.shadow-3d {
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(232, 232, 240, 0.1);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary) 0%,
+    var(--accent-secondary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth transitions */
+button, a, input, select, textarea {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
